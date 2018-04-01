@@ -1,0 +1,63 @@
+\section{Enabling Dynamic Validator Sets}
+
+Validators setは変更できる必要があります。
+
+新しいバリデーターは参加できなければならず、既存のバリデーターは残しておく必要があります。
+
+これを達成するために、私たちはブロックのDynastyを定義します。
+
+ブロックbのDynastyは、ルートからブロックbの親までの連鎖内のfinalizeされたチェックポイントの数です。
+
+バリデーターのdeposit messageがdのブロックに含まれている場合、バリデーターvは最初のブロックでd+2のvalidator setに参加します。このバリデーターのStart dynastyをd+2 と呼びます。DS(ν)
+
+
+Validator setから脱ける場合には、バリデータが "withdraw” message を送信する必要があります。
+
+バリデーターνのwithdraw messageが Dynasty dのブロックに含まれている場合も同様に、最初のブロックに設定されたバリデーターはd+2のDynastyになります。
+
+バリデータのEnd dynasty DE(ν) を d+2 と呼ぶ。
+
+withdraw messageがまだ含まれていない場合は、DE(ν)=∞となります。
+
+バリデーターνがValidator setsを離れると、バリデーターの公開キーはValidator setsに再び参加することを永久に禁止されます。
+
+これにより、単一の識別子に対して複数のStart/Endのを処理する必要がなくなります。
+
+
+End dynastyが始まる時、デポジットが回収される前に、バリデーターのデポジットは、withdrawal delayと呼ばれる長期間ロックされます（「4ヶ月分のブロック」と考える）。
+
+withdrawal delayの間、バリデーターがいかなる命令にも違反した場合、デポジットはslashされます。
+
+
+私たちは与えられたDynasty dに対して、the forward validator set, the rear validator set の2つのValidator Setsを生成する2つの関数を定義します。それらは、
+
+Vf(d) ≡ {ν : DS(ν) ≤ d < DE(ν)}
+Vr(d) ≡ {ν : DS(ν) < d ≤ DE(ν)} .
+
+Dynasty dが The forward validator set, d+1がThe rear validator setという意味であることに注意してください。
+
+
+チェーンが自身の現在のDynastyを ”知る” ことができるようにするためには“finalization”の定義をわずかに制限する必要があります。
+
+チェックポイントCは、それがJustifiedされ、Cからチェックポイントツリー内の直接の子へのSupermajority linkが存在する場合、Finalizeされます。
+
+ここで、Finalizeにはさらに1つの追加条件があります。cは、Supermajority link c → c’の投票と、cを再帰的にJustified するSupermajority linkの全てがc’の子の前のブロックチェーンに含まれている場合、ブロック番号h(c’) * 100に前に置く。
+
+Dynamic Validator Setsをサポートするために、Supermajority linkと finalizationを次のように再定義します。
+
+\begin{enumerate}
+  \item チェックポイントの順序づけられたペア(s, t)があり、t がDynsaty dに含まれる場合、Dynasty dのThe forward validator setの2/3以上がs→t へのリンクに対して投票を発行し、同様に、Dynasty dのThe rear validator setの2/3以上のThe rear validator setもs→tへのリンクに対して投票を行なった場合、 s→tのリンクはSupermajority linkを持つ
+  \item チェックポイントcは、cがJustify され、c→c’ (c’がcの子である) のSupermajority linkがある場合、cはFinalizeされます。c→c’のSupermajority linkへの投票が、c をJustify するSupermajority linkの投票がc’のブロックチェーンに含まれていて、c’の子の前にブロック番号h(c’) * 100
+\end{enumerate}
+
+
+The forward validator setとThe rear validator setは大きく異なります。
+
+2つのvalidator setsが実質的に異なる場合、“stitching” メカニズムは、その場合の安全の失敗を防止する。
+
+証拠が1つのチェーンに含まれているが、他のチェーンには含まれていないため、 finalizeなチェックポイントの2人の孫が異なるDynastyを持つ。
+
+この例については、図4を参照してください。
+
+
+図4: dynamic validator setsからの攻撃. バリデータセット stitchingメカニズムがなければ、2つの競合するチェックポイントcとc’はバリデーターをslashしなくても両方をfinalizeすることができます。この場合、cとc’は同じ高さであり、したがってIの命題に違反しますが、バリデータセットcとc’が互いに素であるため、誰もslashしません。

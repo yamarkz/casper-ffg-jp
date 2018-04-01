@@ -1,0 +1,23 @@
+\section{参考文献}
+
+[1] Pass, R. & Shi, E. Fruitchains: A fair blockchain. In Proceedings of the ACM Symposium on Principles of Distributed Computing, PODC 2017, 315–324
+
+[2] Introducing dfinity crypto techniques (2017). URL https://dfinity.org/pdf-viewer/pdfs/ viewer.html?file=../library/intro-dfinity-crypto.pdf.
+
+[3] King, S. & Nadal, S. Ppcoin: Peer-to-peer crypto-currency with proof-of-stake 19 (2012). URL https: //decred.org/research/king2012.pdf.
+
+[4] Vasin, P. Blackcoin’s proof-of-stake protocol v2 (2014). URL http://blackcoin.co/ blackcoin-pos-protocol-v2-whitepaper.pdf.
+
+[5] Bentov, I., Gabizon, A. & Mizrahi, A. Cryptocurrencies without proof of work. In Sion, R. (ed.) International Conference on Financial Cryptography and Data Security, 142–157 (Springer, 2016).
+
+[6] Castro, M., Liskov, B. & et. al. Practical byzantine fault tolerance. In Leach, P. J. & Seltzer, M. (eds.) Proceedings of the Third Symposium on Operating Systems Design and Implementation, vol. 99, 173–186 (1999).
+
+[7] Kwon, J. Tendermint: Consensus without mining (2014). URL https://tendermint.com/static/ docs/tendermint.pdf.
+
+[8] Chen, J. & Micali, S. ALGORAND: the efficient and democratic ledger. CoRR abs/1607.01341 (2016). URL http://arxiv.org/abs/1607.01341.
+
+[9] Nakamoto, S. Bitcoin: A peer-to-peer electronic cash systems (2008). URL https://bitcoin.org/ bitcoin.pdf.
+
+[10] Buterin, V. Minimal slashing conditions (2017). URL https://medium.com/@VitalikButerin/ minimal-slashing-conditions-20f0b500fc6c.
+
+[11] Sompolinsky, Y. & Zohar, A. Accelerating bitcoin’s transaction processing. fast money grows on trees, not chains. 2013 (2013).

@@ -1,0 +1,31 @@
+\section{結論}
+
+私たちはビザンチンフォールトトレランスに関する文献から導き出された、Proof of StakeシステムであるCasperを紹介しました。
+
+Casperには、2つのslashing conditions、[11]によってインスピレーションを受けた、correct-by-constructionのフォーク選択ルール、そして、dynamic validator setsが含まれます。
+
+最後に2つの一般的な攻撃から防御する、Casperへの拡張機能 (not reverting finalized checkpointsとthe inactivity leak) を紹介しました。
+
+
+Casperは未完成です。例えば、完全に妥協したブロック提案の仕組みは、Casperが新しいブロックをFinalizeするのを防ぐでしょう。
+
+Casperはほぼ全てのPoWチェーンに対するPoSベースの厳重なセキュリティー強化です。
+
+Casperが完全には解決しない問題、特に51％の攻撃に関連する問題は、user-activated soft forksを用いて修正できます。
+
+将来の開発では間違いなくCasperのセキュリティを向上させ、user-activated soft forksの必要性を減らします。
+
+
+Future Work.  現在のCasperシステムは、Proof of Workのブロック提案メカニズムをベースにしています。
+
+私たちはブロック提案メカニズムをProof of Stakeに変換したいと考えています。
+
+私たちはValidator setの重みが報酬と罰則に変わった場合でも、Accountable safetyとPlausible liveness を証明したいと考えています。
+
+今後の課題は、Proof of Stakeの一般的な攻撃を考慮したフォーク選択ルールの正式な仕様です。
+
+今後のワークペーパーでは、Casperの金銭的インセンティブとその結果を説明し、分析します。
+
+攻撃者をブロックするためのこのような自動化された戦略に関連する特定の経済的問題は、異なるクライアント間の不一致度と攻撃者が負担するコストの間の比率の上限を証明しています。
+
+Acknowledgements. 私たちは頻繁に議論してくれたJon Choi、Karl Floersch、Ozymandias Haynes、Vlad Zamfirに感謝します。
