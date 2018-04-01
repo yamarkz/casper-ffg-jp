@@ -1,0 +1,12 @@
+\documentclass[10.5pt,twoside,a4paper,pdflatex,ja=standard]{bxjsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {\string./img/} }
+\usepackage[outdir=./img/]{epstopdf}
+
+\title{Casper the Friendly Finality Gadget}
+\subtitle{キャスパー フレンドリーファイナリティーガジェット}
+\author{ヴィタリック・ブテリン Vitalik Butrein\\ヴァージル・グリフィス Virgil Grifith}
+\organization{Ethereum Foundation}
+
+\begin{document}
