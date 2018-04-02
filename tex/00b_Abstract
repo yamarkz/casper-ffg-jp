@@ -7,3 +7,5 @@ CasperはProof of Stakeアルゴリズムの研究と、ビザンチンフォー
 私たちのシステムを紹介し、望ましい機能をいくつか証明し、Long Range RevisionsとCastastrophic Crashesに対する防御を示します。
 
 Casperのオーバーレイは、ほとんどのProof of Work チェーンのブロック逆転に対する保護を提供します。
+
+\end{abstract}
