@@ -49,8 +49,7 @@ Casperの最も注目すべき特性は、バリデーターの1/3が2つのCasp
 
 私たちは、Casperの2つの基本的な特性、すなわち、accountable safety と d plausible liveness を証明しています。
 Accountable safetyとは1/3が Slashing condition に違反しない限り(つまり、デポジット総額の少なくとも3分の1が失われていることを意味します)、2つの競合するチェックポイントをfinalize することはできません。
-Plausible livenessとは、以前の出来事 (例えば、スラッシングイベント、遅延ブロック、検閲攻撃など) に関係なく、バリデータの2/3以上がプロトコルに従うならば、バリデータを違反することなく常に新しいチェックポイントをfinalizeすることができることを意味する、Slashing conditionのことです。
-
+Plausible livenessとは、以前の出来事 (例えば、スラッシングイベント、遅延ブロック、検閲攻撃など) に関係なく、バリデータの2/3以上がプロトコルに従うならば、バリデータを違反することなく常に新しいチェックポイントをfinalizeすることができることを意味する、Slashing conditionのことです。\\*
 
 バリデーターの2/3が軽度のSlashing conditionに違反していないという前提の下で、我々は以下の特性を有します:
 
@@ -67,8 +66,8 @@ Plausible livenessとは、以前の出来事 (例えば、スラッシングイ
 この4つの特性を手にして、Main theoremsに移ります。
 
 \begin{description}
-  \item[Theorem 1] (Accountable Safety). 2つの競合するチェックポイントamとbnの両方を確定することはできません。
-  \item[Theorem 2] (Plausible Liveness). 完成したチェーンを拡張する子が存在する場合は、新しい大域チェックポイントを生成するために、Supermajority linksを常に追加することができます。
+  \item[\textbf{Theorem 1}] (Accountable Safety). 2つの競合するチェックポイントamとbnの両方を確定することはできません。
+  \item[\textbf{Theorem 2}] (Plausible Liveness). 完成したチェーンを拡張する子が存在する場合は、新しい大域チェックポイントを生成するために、Supermajority linksを常に追加することができます。
 \end{description}
 
 \subsection{Casperのフォーク選択ルール}
