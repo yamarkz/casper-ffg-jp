@@ -46,12 +46,12 @@ Casperの仕事は、各親から1人の子供を選択し、ブロックツリ�
 
 我々は以下の用語を定義する。
 
-\begin{enumerate}
+\begin{itemize}
   \item Supermajority link は、少なくとも 2/3 のバリデーター（デポジットによる）がソースaとターゲットbとで投票を公開するように、a→bと書かれたチェックポイントの順序付きペア（a, b）です。Supermajority links はチェックポイントをスキップすることができます。つまり、h(b)> h(a)+1です。図1cは、赤の3つの異なるSupermajority links を示しています：r→b1, b1→b2, そして b2→b3。
   \item 2つのチェックポイント a と bは、それらが別々のブランチ内のノードである場合、すなわち祖先または他方の子孫のいずれでもない場合にのみ、矛盾すると呼ばれる。
   \item チェックポイント c は、(1) ルートである場合にjustifiedされ、(2) c’ がjustifiedされるsupermajority link c’→c が存在する場合、図1cは、4つの justified ブロックのチェーンを示しています。
   \item チェックポイント c は、finalizedされ、supermajority link c→c' があり、c' が c の直接の子である場合、finalizedされます。同様に、チェックポイントcは、チェックポイント c がjustifiedされ、 supermajority link c→c' が存在し、チェックポイント c と c' が衝突していない場合にのみ終了し、h(c') = h(c)+1である。
-\end{enumerate}
+\end{itemize}
 
 これらのルールのいずれかに違反したバリデーターは、デポジットを払い落とし (slashed)ます。
 
@@ -69,7 +69,7 @@ Plausible livenessとは、以前の出来事 (例えば、スラッシングイ
 
 バリデーターの2/3が軽度のSlashing conditionに違反していないという前提の下で、我々は以下の特性を有します:
 
-\begin{enumerate}
+\begin{itemize}
   \item If s1 → t1 and s2 → t2 are distinct supermajority links, then h(t1) 6= h(t2).
   \item s1→t1とs2→t2が異なる超大多数のリンクである場合、不等式h(s1) <h(s2)<h(t2) <h(t1)は成り立たない。
 
@@ -77,13 +77,13 @@ Plausible livenessとは、以前の出来事 (例えば、スラッシングイ
 
   \item h(t) = nで最大でも1つの超大多数のリンクs→tが存在する。
   \item 高さnの正当化されたチェックポイントが最大でも1つ存在する。
-\end{enumerate}
+\end{itemize}
 
 この4つの特性を手にして、Main theoremsに移ります。
 
-\begin{enumerate}
-  \item Theorem 1 (Accountable Safety). 2つの競合するチェックポイントamとbnの両方を確定することはできません。
-  \item Theorem 2 (Plausible Liveness). 完成したチェーンを拡張する子が存在する場合は、新しい大域チェックポイントを生成するために、Supermajority linksを常に追加することができます。
+\begin{description}
+  \item[Theorem 1] (Accountable Safety). 2つの競合するチェックポイントamとbnの両方を確定することはできません。
+  \item[Theorem 2] (Plausible Liveness). 完成したチェーンを拡張する子が存在する場合は、新しい大域チェックポイントを生成するために、Supermajority linksを常に追加することができます。
 \end{enumerate}
 
 \subsection{Casperのフォーク選択ルール}

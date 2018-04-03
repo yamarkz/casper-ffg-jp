@@ -16,7 +16,7 @@ Casperが完全には解決しない問題、特に51％の攻撃に関連する
 将来の開発では間違いなくCasperのセキュリティを向上させ、user-activated soft forksの必要性を減らします。
 
 
-Future Work.  現在のCasperシステムは、Proof of Workのブロック提案メカニズムをベースにしています。
+{\rm Future Work.}  現在のCasperシステムは、Proof of Workのブロック提案メカニズムをベースにしています。
 
 私たちはブロック提案メカニズムをProof of Stakeに変換したいと考えています。
 
@@ -28,4 +28,4 @@ Future Work.  現在のCasperシステムは、Proof of Workのブロック提�
 
 攻撃者をブロックするためのこのような自動化された戦略に関連する特定の経済的問題は、異なるクライアント間の不一致度と攻撃者が負担するコストの間の比率の上限を証明しています。
 
-Acknowledgements. 私たちは頻繁に議論してくれたJon Choi、Karl Floersch、Ozymandias Haynes、Vlad Zamfirに感謝します。
+{\rm Acknowledgements.} 私たちは頻繁に議論してくれたJon Choi、Karl Floersch、Ozymandias Haynes、Vlad Zamfirに感謝します。

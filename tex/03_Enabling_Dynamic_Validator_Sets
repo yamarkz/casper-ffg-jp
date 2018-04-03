@@ -31,8 +31,12 @@ withdrawal delayの間、バリデーターがいかなる命令にも違反し�
 
 私たちは与えられたDynasty dに対して、the forward validator set, the rear validator set の2つのValidator Setsを生成する2つの関数を定義します。それらは、
 
+\begin{center}
+
 Vf(d) ≡ {ν : DS(ν) ≤ d < DE(ν)}
 Vr(d) ≡ {ν : DS(ν) < d ≤ DE(ν)} .
+
+\end{center}
 
 Dynasty dが The forward validator set, d+1がThe rear validator setという意味であることに注意してください。
 
@@ -45,10 +49,10 @@ Dynasty dが The forward validator set, d+1がThe rear validator setという意
 
 Dynamic Validator Setsをサポートするために、Supermajority linkと finalizationを次のように再定義します。
 
-\begin{enumerate}
+\begin{itemize}
   \item チェックポイントの順序づけられたペア(s, t)があり、t がDynsaty dに含まれる場合、Dynasty dのThe forward validator setの2/3以上がs→t へのリンクに対して投票を発行し、同様に、Dynasty dのThe rear validator setの2/3以上のThe rear validator setもs→tへのリンクに対して投票を行なった場合、 s→tのリンクはSupermajority linkを持つ
   \item チェックポイントcは、cがJustify され、c→c’ (c’がcの子である) のSupermajority linkがある場合、cはFinalizeされます。c→c’のSupermajority linkへの投票が、c をJustify するSupermajority linkの投票がc’のブロックチェーンに含まれていて、c’の子の前にブロック番号h(c’) * 100
-\end{enumerate}
+\end{itemize}
 
 
 The forward validator setとThe rear validator setは大きく異なります。
